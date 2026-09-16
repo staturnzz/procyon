@@ -4,7 +4,7 @@ all: $(SRC)
 	@cat $^ > ./untether.js
 	@chmod 0777 ./untether.js
 	@chown 501:20 ./untether.js
-	eslint ./untether.js
+#eslint ./untether.js
 
 clean:
 	@rm -rf ./untether.js

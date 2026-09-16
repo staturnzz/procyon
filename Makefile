@@ -47,12 +47,3 @@ tar:
 
 package: clean all deb tar
 
-install1: all
-	sshpass -p alpine ssh -p 6414 root@127.0.0.1 "rm -rf /usr/bin/procyon"
-
-install2:
-	sshpass -p alpine scp -P 6414 ./procyon/procyon root@127.0.0.1:/usr/bin/procyon
-#sshpass -p alpine ssh -p 6414 root@127.0.0.1 "rm -rf /var/root/iocaste/stage3.bin"
-#sshpass -p alpine scp -P 6414 ./untether/untether.js root@127.0.0.1:/var/root/iocaste/stage3.bin
-
-install: install1 install2

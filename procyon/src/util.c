@@ -133,25 +133,6 @@ void sync_volume(const char *path) {
     sync_volume_np(path, 0);
 }
 
-int create_file(const char *path, mode_t mode, uid_t uid, gid_t gid) {
-    if (access(path, F_OK) == 0) {
-        if (chmod(path, mode) != 0) return -1;
-        if (chown(path, uid, gid) != 0) return -1;
-        sync();
-        return 0;
-    }
-
-    int fd = open(path, O_RDWR|O_CREAT);
-    if (fd < 0) return -1;
-    close(fd);
-    sync();
-
-    if (chmod(path, mode) != 0) return -1;
-    if (chown(path, uid, gid) != 0) return -1;
-    sync();
-    return 0;
-}
-
 void *load_embedded_file(const char *name, size_t *size) {
     struct mach_header *hdr = &_mh_execute_header;
     struct load_command *load_cmd = (struct load_command *)(hdr + 1);

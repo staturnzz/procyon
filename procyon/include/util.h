@@ -20,8 +20,6 @@ int copy_file(const char *from, void *to);
 int move_file(const char *from, void *to, bool same_partition);
 void sync_path(const char *path);
 void sync_volume(const char *path);
-int edit_plist(const char *path, void (^action)(CFMutableDictionaryRef plist));
-int create_file(const char *path, mode_t mode, uid_t uid, gid_t gid);
 void *load_embedded_file(const char *name, size_t *size);
 void get_ios_version(uint32_t *output);
 void print_log(bool error, const char *fmt, ...);
