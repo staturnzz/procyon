@@ -50,3 +50,10 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+*.DS_Store
+procyon/procyon
+untether/untether.js
+*.deb
+/staging
+procyon.tar
